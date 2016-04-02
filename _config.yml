@@ -1,0 +1,45 @@
+name: code! by James
+description: 23 year old programmer with gumption and c++ 
+meta_description: "code! by James"
+
+aboutPage: true
+
+paginate: 20
+baseurl: /
+domain_name: 'http://codebang.io'
+google_analytics: 'UA-XXXXXXXX-X'
+disqus: false
+disqus_shortname: 'your-disqus-shortname'
+
+# Details for the RSS feed generator
+url:            'http://your-blog-url.example.com'
+author:         'James Tiller'
+authorTwitter:  'codeinterrobang'
+
+permalink:       /:year/:title/
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+gems: [jekyll-paginate, jekyll-gist]
+
+defaults:
+    -
+        scope:
+            path: "" # empty string for all files
+            type: pages
+        values:
+            layout: default
+    -
+        scope:
+            path: "" # empty string for all files
+            type: posts
+        values:
+            layout: post
+    -
+        scope:
+            path: ""
+            type: drafts
+        values:
+            layout: post
