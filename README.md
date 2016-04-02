@@ -1,2 +1,2 @@
-# codebangio.github.io
+# codebang.io
 Website backend for codebang.io
