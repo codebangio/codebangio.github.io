@@ -1,5 +1,5 @@
 name: code! by James
-description: 23 year old programmer with gumption and c++ 
+description: 23 year old programmer with gumption and c++
 meta_description: "code! by James"
 
 aboutPage: true
@@ -7,7 +7,7 @@ aboutPage: true
 paginate: 20
 baseurl: /
 domain_name: 'http://codebang.io'
-google_analytics: 'UA-XXXXXXXX-X'
+google_analytics: ''
 disqus: false
 disqus_shortname: 'your-disqus-shortname'
 
@@ -15,6 +15,16 @@ disqus_shortname: 'your-disqus-shortname'
 url:            'http://your-blog-url.example.com'
 author:         'James Tiller'
 authorTwitter:  'codeinterrobang'
+email: email@codebang.io
+email_full: mailto:james.a.tiller@vanderbilt.edu
+website: codebang.io
+website_full: https://codebang.io
+github: codebangio
+twitter:
+tel: +1 704 658 7826
+tel_full: tel:+17046587826
+city: Charlotte, NC
+country: United States
 
 permalink:       /:year/:title/
 
