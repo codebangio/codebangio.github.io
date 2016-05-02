@@ -1,68 +1,1167 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>{{ site.title }}</title>
-    <meta name="description" content="{{ site.name }}'s Résumé">
-    <meta name="author" content="{{ site.name }} @{{ site.twitter }}">
+---
+layout: default
+---
+<div id="resume">
+<style type="text/css">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+/* Clearfix */
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
-    <link rel="stylesheet" href="{{ site.baseurl }}assets/css/style.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}assets/css/skeleton_resume.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}assets/css/layout_resume.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+.hidden {
+    display: none;
+}
 
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
-    <link rel="shortcut icon" href="{{ site.baseurl }}static/img/favicon.ico">
-    <!-- <link rel="apple-touch-icon" href="static/img/me-icon-57.png"> -->
-    <!-- <link rel="apple-touch-icon" sizes="72x72" href="static/img/me-icon-72.png"> -->
-    <!-- <link rel="apple-touch-icon" sizes="114x114" href="static/img/me-icon-114.png"> -->
-</head>
-<body>
-  {% include navigation.html %}
-<div class="container">
-    <header class="three columns">
-        <img src="{{ site.baseurl }}assets/images/avatar.png" class="me">
-        <h3>{{ site.author }}</h3>
-        <p>
-            <a href="{{ site.tel_full }}">{{ site.tel }}</a>
-        </p>
-        <address>
-            <a href="{{ site.google_maps }}">
-                {{ site.city }}<br/>
-                {{ site.country }}
-            </a>
-        </address>
-        <p>
-            <a href="{{ site.website_full }}">{{ site.website }}</a><br/>
-        </p>
-        <p>
-            <a href="{{ site.email_full }}">{{ site.email }}</a><br/>
-            <a href="https://github.com/{{ site.github }}"><i class="fa fa-github"></i> Github</a> /
-            <a href="https://twitter.com/{{ site.twitter }}"><i class="fa fa-twitter"></i> Twitter</a>
-        </p>
-    </header>
-    <div class="thirteen columns clearfix">
 
-        {{ content }}
+/* Spacing */
+.post h1, h3, h4, h5, p, .post-body ul, #post-list li, pre {
+    margin-bottom: 20px;
+}
 
-        {% include footer.html %}
-    </div>
+/* Base */
+html, body {
+    height: 100%;
+}
+
+body {
+    font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #666;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+h1 {
+    font-size: 30px;
+    letter-spacing: -1px;
+    color: #222;
+}
+
+h2 {
+    font: italic 19px/1.3em Georgia, serif;
+    color: #bbb;
+}
+
+.profile #wrapper {
+    padding: 100px 40px 0px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile #header {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.profile #avatar {
+    margin-bottom: 20px;
+}
+
+.profile h1 {
+    text-align: left;
+}
+
+.profile h2 {
+    text-align: left;
+}
+
+#wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 60px 40px 100px 40px;
+}
+
+#wrapper.home {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0px 40px 20px 40px;
+}
+
+.home #avatar {
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Typography */
+/*Accent color*/
+a,
+#title,
+#post-list a:hover,
+#post-list li:hover .dates,
+#title:hover {
+    text-decoration: none;
+    color: #5badf0;
+    color: #5694f1;
+}
+
+.panel-main p {
+    font-weight: bold;
+}
+
+p a {
+    color: #5694f1;
+}
+
+/*Transitions*/
+a,
+#post-nav a,
+#post-list a {
+    -webkit-transition: all 0.15s ease;
+    -moz-transition: all 0.15s ease;
+    -ms-transition: all 0.15s ease;
+    -o-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Line Height */
+#post-body, p {
+    line-height: 1.7;
+}
+
+b, strong {
+    font-weight: 500;
+    color: #1E2025;
+}
+
+em, i {
+    font-style: italic;
+}
+
+#title {
+    display: inline-block;
+    line-height: 100%;
+    font-weight: 500;
+    font-size: 19px;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+.description {
+    float: right;
+    font: italic 14px/1.4em Georgia, serif;
+    color: #aaa;
+}
+
+.home h1 {
+    font-size: 30px;
+    letter-spacing: -1px;
+    color: #222;
+    font-weight: bold;
+}
+
+.home h2 {
+    font: italic 19px/1.3em Georgia, serif;
+    color: #bbb;
+}
+
+.post header {
+    text-align: center;
+
+}
+
+.post h1 {
+    margin-bottom: 20px;
+    color: #222;
+    font: 300 32px/1.4em "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.post h2 {
+    margin-bottom: 40px;
+    font: 300 24px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #111;
+}
+
+.post h2.headline {
+    /*font: italic 22px/1.3em Georgia,serif;*/
+    font: normal 13px/1.5em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: -5px 0 40px 0;
+    color: #b2b9be;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /*margin-top: 15px;*/
+    display: inline-block;
+}
+
+#post-list h2 {
+    font: normal 17px/1.5em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #aaa;
+    max-width: 400px;
+    margin-top: 2px;
+}
+
+h3, h4, h5 {
+    color: #333;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 13px;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+p.small {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.5;
+    display: block;
+}
+
+blockquote {
+    padding-left: 15px;
+    border-left: 3px solid #eee;
+}
+
+#resume hr {
+    display: block;
+    border: none;
+    height: 1px;
+    margin: 40px auto;
+    background: #eee;
+}
+
+span.code {
+    font-family: Menlo, Monaco, Courier;
+    background-color: #EEE;
+    font-size: 14px;
+}
+
+pre {
+    font-family: Menlo, Monaco, Courier;
+    white-space: pre-wrap;
+    /*border: 1px solid #ddd;*/
+    padding: 20px;
+    background-color: #fdfdfd;
+    /*font-size:14px;*/
+    overflow: auto;
+    border-radius: 3px;
+    background: #272b2d;
+    font-family: 'Source Code Pro', Menlo, monospace;
+    font-size: 13px;
+    line-height: 1.5em;
+    font-weight: 500;
+    color: #d0d4d7;
+
+}
+
+table {
+    width: 100%;
+    margin: 40px 0;
+    border-collapse: collapse;
+    font-size: 13px;
+    line-height: 1.5em;
+}
+
+th, td {
+    text-align: left;
+    padding-right: 20px;
+    vertical-align: top;
+}
+
+table td, td {
+    border-spacing: none;
+    border-style: solid;
+    padding: 10px 15px;
+    border-width: 1px 0 0 0;
+}
+
+tr > td {
+    border-top: 1px solid #eaeaea;
+}
+
+tr:nth-child(odd) > td {
+    background: #fcfcfc;
+}
+
+thead th, th {
+    text-align: left;
+    padding: 10px 15px;
+    height: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #444;
+    border-bottom: 1px solid #dadadc;
+    cursor: default;
+    white-space: nowrap;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 3px;
+}
+
+/* Made with Cactus Badge */
+#badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    height: 48px;
+    width: 48px;
+}
+
+/*=========================================
+    Post List
+    =========================================== */
+#post-list, #archive-list {
+    margin-top: 100px;
+}
+
+#post-list li, #archive-list li {
+    list-style-type: none;
+}
+
+#post-list li:last-child {
+    margin-bottom: 0;
+}
+
+#post-list li + li {
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+#post-list a {
+    color: #333;
+    display: block;
+    font: bold 19px/1.7 "Helvetica Neue", helvetica, Arial, sans-serif;
+}
+
+#post-list .dates {
+    float: right;
+    position: relative;
+    top: 1px;
+    font: 300 17px/1.8 "Helvetica Neue", helvetica, Arial, sans-serif;
+    color: #bbb;
+}
+
+#post-list-footer {
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+    padding-top: 100px;
+}
+
+#archive-link {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 3px 10px 6px;
+    box-shadow: 0 0 0 1px hsla(207, 83%, 80%, 1);
+}
+
+#archive-link:hover {
+    background: #5694f1;
+    color: #fff;
+    box-shadow: 0 0 0 1px #5694f1;
+}
+
+#archive-link span {
+    position: relative;
+    top: 0;
+    font-size: 17px;
+}
+
+#footer {
+    padding: 40px 0 0 0;
+    margin-top: 100px;
+}
+
+/* Post Page */
+#header {
+    border-bottom: 1px solid #eee;
+}
+
+.post {
+    margin: 80px 0 0 0;
+}
+
+#post-meta {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.4;
+    border-top: 1px solid #eee;
+    padding-top: 40px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    margin-top: 40px;
+    color: #444;
+    border-bottom: 1px solid #eee;
+}
+
+#post-meta div span {
+    color: #aaa;
+    font-weight: 500;
+    display: block;
+}
+
+#post-meta div span.dark {
+    color: #1E2025;
+
+}
+
+#post-meta div {
+    margin: 0 25px 0 0;
+    float: left;
+}
+
+#sharing {
+    float: right;
+    margin: -2px;
+}
+
+#sharing a {
+    font-size: 20px;
+    font-size: 23px;
+    margin-left: 1px;
+    margin-top: 4px;
+    color: #d4d4d4;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#sharing a:hover {
+    /*color: #444;*/
+    opacity: 0.8;
+}
+
+/* Archive */
+h1.archive {
+    margin-bottom: 0px;
+}
+
+h2.month {
+    width: 100%;
+    font: bold 13px/1 "Helvetica Neue", helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#archive-list li:last-child {
+    margin-bottom: 0;
+}
+
+#archive-list a {
+    display: block;
+    font: bold 17px/1.7 "Helvetica Neue", helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+#archive-list .dates {
+    float: right;
+    position: relative;
+    top: 1px;
+    font: 300 17px/1.7 "Helvetica Neue", helvetica, Arial, sans-serif;
+    color: #bbb;
+}
+
+#archive-list li a:hover, #archive-list li:hover .dates {
+    color: #5694f1;
+}
+
+#post-meta img.avatar {
+    height: 36px;
+    width: 36px;
+    float: left;
+    border-radius: 50%;
+    margin-top: 3px;
+    margin-right: 20px;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee;
+}
+
+#post-list.archive.readmore h3 {
+
+    font: 400 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 30px;
+}
+
+#post-list.archive.readmore a {
+    font: 400 16px/1.6 "Helvetica Neue", helvetica, Arial, sans-serif;
+    color: #5694f1;
+}
+
+#post-list.archive.readmore a:hover {
+    opacity: 0.8;
+}
+
+#post-list.archive.readmore .dates {
+    font: 300 16px/1.6 "Helvetica Neue", helvetica, Arial, sans-serif;
+}
+
+#sharing a.facebook {
+    background: #4361b3;
+}
+
+#sharing a.twitter {
+    background: #4fafed;
+}
+
+#sharing a {
+    font-size: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-left: 2px;
+}
+
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+/* Table of Contents
+    ==================================================
+        #Base 960 Grid
+        #Tablet (Portrait)
+        #Mobile (Portrait)
+        #Mobile (Landscape)
+        #Clearing */
+
+/* #Base 960 Grid
+    ================================================== */
+
+.container {
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.container .column,
+.container .columns {
+    float: left;
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+/* Nested Column Classes */
+.column.alpha, .columns.alpha {
+    margin-left: 0;
+}
+
+.column.omega, .columns.omega {
+    margin-right: 0;
+}
+
+/* Base Grid */
+.container .one.column,
+.container .one.columns {
+    width: 40px;
+}
+
+.container .two.columns {
+    width: 100px;
+}
+
+.container .three.columns {
+    width: 160px;
+}
+
+.container .four.columns {
+    width: 220px;
+}
+
+.container .five.columns {
+    width: 280px;
+}
+
+.container .six.columns {
+    width: 340px;
+}
+
+.container .seven.columns {
+    width: 400px;
+}
+
+.container .eight.columns {
+    width: 460px;
+}
+
+.container .nine.columns {
+    width: 520px;
+}
+
+.container .ten.columns {
+    width: 580px;
+}
+
+.container .eleven.columns {
+    width: 640px;
+}
+
+.container .twelve.columns {
+    width: 700px;
+}
+
+.container .thirteen.columns {
+    width: 760px;
+}
+
+.container .fourteen.columns {
+    width: 820px;
+}
+
+.container .fifteen.columns {
+    width: 880px;
+}
+
+.container .sixteen.columns {
+    width: 940px;
+}
+
+.container .one-third.column {
+    width: 300px;
+}
+
+.container .two-thirds.column {
+    width: 620px;
+}
+
+/* Offsets */
+.container .offset-by-one {
+    padding-left: 60px;
+}
+
+.container .offset-by-two {
+    padding-left: 120px;
+}
+
+.container .offset-by-three {
+    padding-left: 180px;
+}
+
+.container .offset-by-four {
+    padding-left: 240px;
+}
+
+.container .offset-by-five {
+    padding-left: 300px;
+}
+
+.container .offset-by-six {
+    padding-left: 360px;
+}
+
+.container .offset-by-seven {
+    padding-left: 420px;
+}
+
+.container .offset-by-eight {
+    padding-left: 480px;
+}
+
+.container .offset-by-nine {
+    padding-left: 540px;
+}
+
+.container .offset-by-ten {
+    padding-left: 600px;
+}
+
+.container .offset-by-eleven {
+    padding-left: 660px;
+}
+
+.container .offset-by-twelve {
+    padding-left: 720px;
+}
+
+.container .offset-by-thirteen {
+    padding-left: 780px;
+}
+
+.container .offset-by-fourteen {
+    padding-left: 840px;
+}
+
+.container .offset-by-fifteen {
+    padding-left: 900px;
+}
+
+/* #Tablet (Portrait)
+    ================================================== */
+
+/* Note: Design for a width of 768px */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .container {
+        width: 768px;
+    }
+
+    .container .column,
+    .container .columns {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .column.alpha, .columns.alpha {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    .column.omega, .columns.omega {
+        margin-right: 0;
+        margin-left: 10px;
+    }
+
+    .alpha.omega {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .container .one.column,
+    .container .one.columns {
+        width: 28px;
+    }
+
+    .container .two.columns {
+        width: 76px;
+    }
+
+    .container .three.columns {
+        width: 124px;
+    }
+
+    .container .four.columns {
+        width: 172px;
+    }
+
+    .container .five.columns {
+        width: 220px;
+    }
+
+    .container .six.columns {
+        width: 268px;
+    }
+
+    .container .seven.columns {
+        width: 316px;
+    }
+
+    .container .eight.columns {
+        width: 364px;
+    }
+
+    .container .nine.columns {
+        width: 412px;
+    }
+
+    .container .ten.columns {
+        width: 460px;
+    }
+
+    .container .eleven.columns {
+        width: 508px;
+    }
+
+    .container .twelve.columns {
+        width: 556px;
+    }
+
+    .container .thirteen.columns {
+        width: 604px;
+    }
+
+    .container .fourteen.columns {
+        width: 652px;
+    }
+
+    .container .fifteen.columns {
+        width: 700px;
+    }
+
+    .container .sixteen.columns {
+        width: 748px;
+    }
+
+    .container .one-third.column {
+        width: 236px;
+    }
+
+    .container .two-thirds.column {
+        width: 492px;
+    }
+
+    /* Offsets */
+    .container .offset-by-one {
+        padding-left: 48px;
+    }
+
+    .container .offset-by-two {
+        padding-left: 96px;
+    }
+
+    .container .offset-by-three {
+        padding-left: 144px;
+    }
+
+    .container .offset-by-four {
+        padding-left: 192px;
+    }
+
+    .container .offset-by-five {
+        padding-left: 240px;
+    }
+
+    .container .offset-by-six {
+        padding-left: 288px;
+    }
+
+    .container .offset-by-seven {
+        padding-left: 336px;
+    }
+
+    .container .offset-by-eight {
+        padding-left: 384px;
+    }
+
+    .container .offset-by-nine {
+        padding-left: 432px;
+    }
+
+    .container .offset-by-ten {
+        padding-left: 480px;
+    }
+
+    .container .offset-by-eleven {
+        padding-left: 528px;
+    }
+
+    .container .offset-by-twelve {
+        padding-left: 576px;
+    }
+
+    .container .offset-by-thirteen {
+        padding-left: 624px;
+    }
+
+    .container .offset-by-fourteen {
+        padding-left: 672px;
+    }
+
+    .container .offset-by-fifteen {
+        padding-left: 720px;
+    }
+}
+
+/*  #Mobile (Portrait)
+    ================================================== */
+
+/* Note: Design for a width of 320px */
+
+@media only screen and (max-width: 767px) {
+    .container {
+        width: 300px;
+    }
+
+    .container .columns,
+    .container .column {
+        margin: 0;
+    }
+
+    .container .one.column,
+    .container .one.columns,
+    .container .two.columns,
+    .container .three.columns,
+    .container .four.columns,
+    .container .five.columns,
+    .container .six.columns,
+    .container .seven.columns,
+    .container .eight.columns,
+    .container .nine.columns,
+    .container .ten.columns,
+    .container .eleven.columns,
+    .container .twelve.columns,
+    .container .thirteen.columns,
+    .container .fourteen.columns,
+    .container .fifteen.columns,
+    .container .sixteen.columns,
+    .container .one-third.column,
+    .container .two-thirds.column {
+        width: 300px;
+    }
+
+    /* Offsets */
+    .container .offset-by-one,
+    .container .offset-by-two,
+    .container .offset-by-three,
+    .container .offset-by-four,
+    .container .offset-by-five,
+    .container .offset-by-six,
+    .container .offset-by-seven,
+    .container .offset-by-eight,
+    .container .offset-by-nine,
+    .container .offset-by-ten,
+    .container .offset-by-eleven,
+    .container .offset-by-twelve,
+    .container .offset-by-thirteen,
+    .container .offset-by-fourteen,
+    .container .offset-by-fifteen {
+        padding-left: 0;
+    }
+
+}
+
+/* #Mobile (Landscape)
+    ================================================== */
+
+/* Note: Design for a width of 480px */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .container {
+        width: 420px;
+    }
+
+    .container .columns,
+    .container .column {
+        margin: 0;
+    }
+
+    .container .one.column,
+    .container .one.columns,
+    .container .two.columns,
+    .container .three.columns,
+    .container .four.columns,
+    .container .five.columns,
+    .container .six.columns,
+    .container .seven.columns,
+    .container .eight.columns,
+    .container .nine.columns,
+    .container .ten.columns,
+    .container .eleven.columns,
+    .container .twelve.columns,
+    .container .thirteen.columns,
+    .container .fourteen.columns,
+    .container .fifteen.columns,
+    .container .sixteen.columns,
+    .container .one-third.column,
+    .container .two-thirds.column {
+        width: 420px;
+    }
+}
+
+/* #Clearing
+    ================================================== */
+
+/* Self Clearing Goodness */
+.container:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.row:after,
+.clearfix:after {
+    clear: both;
+}
+
+.row,
+.clearfix {
+    zoom: 1;
+}
+
+/* You can also use a <br class="clear" /> to clear columns */
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:700,400);
+
+body {
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 21px;
+    color: rgb(48, 48, 48);
+}
+
+.container {
+    margin-top: 50px;
+}
+
+a {
+    text-decoration: none;
+    /*background-color: rgba(39, 168, 34, 0.06);*/
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+p, address {
+    margin-bottom: 0;
+}
+
+.me {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+header > h1, section > h1 {
+    color: #5badf0;
+}
+
+header > h1 {
+    line-height: 100%;
+    font-size: 250%;
+    margin-bottom: 20px;
+}
+
+.container > header p, .container > header address {
+    margin-bottom: 20px;
+}
+
+.container > header p:last-child {
+    margin-bottom: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section > h1 {
+    font-size: 140%;
+    line-height: 120%;
+    text-transform: uppercase;
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+article > header > h1 {
+    font-size: 112%;
+    font-weight: bold;
+    line-height: 150%;
+    margin-bottom: 0;
+    color: inherit;
+}
+
+article > header > span + span {
+    margin-left: 2px;
+}
+
+article > header > span + span::before {
+    content: '@';
+    margin-right: 4px;
+}
+
+article > header > span {
+    color: #808080;
+    font-size: 100%;
+}
+
+article > header > span a {
+    color: inherit;
+}
+
+article > header address {
+    display: inline;
+}
+
+article > header address + time {
+    margin-left: 6px;
+}
+
+article > header address + time::before {
+    content: '—';
+    margin-right: 6px;
+}
+
+em {
+    font-style: normal;
+    font-weight: bold;
+    color: rgb(100, 100, 100);
+    /*margin-right: 6px;*/
+}
+
+@media print {
+    @page {
+        margin: 15mm;
+    }
+
+    body {
+        font-size: 14pt;
+        line-height: 21pt;
+    }
+
+    .container > header {
+        font-size: 80%;
+        line-height: 160%;
+    }
+
+    article > header > span {
+        font-size: 80%;
+        line-height: 80%;
+    }
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 10pt;
+}
+</style>
+    {{content}}
 </div>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', '{{ site.google_analytics }}', 'auto');
-  ga('send', 'pageview');
-
-</script>
-</body>
-</html>

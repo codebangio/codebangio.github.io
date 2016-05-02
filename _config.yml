@@ -1,55 +1,38 @@
-name: code! by James
-description: 23 year old programmer with gumption and c++
-meta_description: "code! by James"
+# Site settings
+title: James Tiller Software
+description: 'Home of James Tiller, Software Engineer'
+url: 'http://jamestillersoftware.github.io'
+baseurl: '/'
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
 
-aboutPage: true
-
-paginate: 20
-baseurl: /
-domain_name: 'http://codebang.io'
-google_analytics: ''
-disqus: false
-disqus_shortname: 'your-disqus-shortname'
-
-# Details for the RSS feed generator
-url:            'http://your-blog-url.example.com'
-author:         'James Tiller'
-authorTwitter:  'codeinterrobang'
-email: email@codebang.io
-email_full: mailto:james.a.tiller@vanderbilt.edu
-website: codebang.io
-website_full: http://codebang.io
-github: codebangio
-twitter:
-tel: +1 704 658 7826
-tel_full: tel:+17046587826
-city: Charlotte, NC
-country: United States
-
-permalink:       /:year/:title/
-
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-
-gems: [jekyll-paginate, jekyll-gist]
+author:
+  name: 'James Tiller'
+  email: james.a.tiller@vanderbilt.edu
+  twitter_username: jamestillercode
+  github_username:  jamestillersoftware
+  linkedin_username:  jamesalexandertiller
 
 defaults:
-    -
-        scope:
-            path: "" # empty string for all files
-            type: pages
-        values:
-            layout: default
-    -
-        scope:
-            path: "" # empty string for all files
-            type: posts
-        values:
-            layout: post
-    -
-        scope:
-            path: ""
-            type: drafts
-        values:
-            layout: post
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+gems: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
