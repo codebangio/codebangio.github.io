@@ -1,10 +1,19 @@
 ---
-layout: default
+layout: resume
+title: Resume
 ---
 
 <div class="main-post-list">
+  {% include employment.html %}
 
-  <ol class="post-list">
+  {% include education.html %}
+
+  {% include skills.html %}
+
+  {% include initiatives.html %}
+
+  {% include interests.html %}
+  <!--<ol class="post-list">
     {% for post in paginator.posts %}
       <li>
         <h2 class="post-list__post-title post-title"><a href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}" title="{{ post.title }}">{{ post.title }}</a></h2>
@@ -19,6 +28,6 @@ layout: default
 
   {% if paginator.previous_page or paginator.next_page %}
       {% include pagination.html %}
-  {% endif %}
+  {% endif %}-->
 
 </div>
